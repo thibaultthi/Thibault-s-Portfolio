@@ -212,8 +212,21 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.querySelector('.btn-text').textContent = 'Sending...';
 
             try {
-                // Simulate form submission (replace with actual API call)
-                await new Promise(resolve => setTimeout(resolve, 2000));
+                // Get form data
+                const formData = {
+                    from_name: document.getElementById('name').value,
+                    reply_to: document.getElementById('email').value,
+                    subject: document.getElementById('subject').value,
+                    message: document.getElementById('message').value
+                };
+
+                // Send email using EmailJS
+                await emailjs.send(
+                    'service_1rdct67', // Your Service ID
+                    'template_7t2j5wd', // Your Template ID
+                    formData,
+                    'xiyq2GTzXY5dVsU24' // Public Key
+                );
                 
                 // Show success message
                 contactForm.reset();
@@ -228,6 +241,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }, 3000);
 
             } catch (error) {
+                console.error('Email error:', error);
                 // Show error message
                 submitBtn.disabled = false;
                 submitBtn.querySelector('.btn-text').textContent = 'Error! Try Again';
