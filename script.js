@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         typingText.textContent = '';
         
         const phrases = [
-            'Fullstack Developer',
+            'Product Manager',
             'Problem Solver',
             'Tech Enthusiast',
             'Web Creator',
