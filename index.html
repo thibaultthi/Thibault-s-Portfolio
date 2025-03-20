@@ -7,6 +7,9 @@
     <title>Thibault - Product Manager</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="header">
@@ -18,23 +21,29 @@
                     </div>
                 </a>
             </div>
-            <div class="nav-toggle">
-                <i class="fas fa-bars"></i>
+            <div class="nav-menu-container">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link active">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="projects.html" class="nav-link">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+                <!-- Theme Toggle Button -->
+                <div class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode">
+                    <i class="toggle-icon fas fa-sun"></i>
+                </div>
+                <div class="nav-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
             </div>
-            <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="index.html" class="nav-link active">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="about.html" class="nav-link">About</a>
-                </li>
-                <li class="nav-item">
-                    <a href="projects.html" class="nav-link">Projects</a>
-                </li>
-                <li class="nav-item">
-                    <a href="contact.html" class="nav-link">Contact</a>
-                </li>
-            </ul>
         </nav>
     </header>
 
@@ -45,9 +54,11 @@
                 <div class="hero-text">
                     <span class="greeting">Hello, I'm</span>
                     <h1 class="hero-title">Thibault</h1>
-                    <p class="hero-subtitle typing-text"></p>
+                    <div class="hero-subtitle-container">
+                        <p class="hero-subtitle typing-text"></p>
+                    </div>
                     <p class="hero-description">I am a Product Manager with experience in
-                        design, coding, finance. 
+                        design, coding, and finance. 
                         Currently based in <del>France, New-York,</del> San Francisco, CA.</p>
                     <div class="cta-buttons">
                         <a href="projects.html" class="btn btn-primary">View My Work</a>
