@@ -1,4 +1,58 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Theme toggling functionality
+    const themeToggle = document.getElementById('theme-toggle');
+    const toggleIcon = themeToggle.querySelector('.toggle-icon');
+    
+    // Function to set theme
+    const setTheme = (theme) => {
+        // Add a transition class to html to ensure all elements transition together
+        document.documentElement.classList.add('theme-transitioning');
+        
+        // Set the theme attribute
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+        
+        // Update the icon based on the theme
+        if (theme === 'dark') {
+            toggleIcon.classList.remove('fa-sun');
+            toggleIcon.classList.add('fa-moon');
+        } else {
+            toggleIcon.classList.remove('fa-moon');
+            toggleIcon.classList.add('fa-sun');
+        }
+        
+        // Remove the transition class after the transition completes
+        setTimeout(() => {
+            document.documentElement.classList.remove('theme-transitioning');
+        }, 300); // Slightly longer than our CSS transition to ensure completion
+    };
+    
+    // Check for saved theme preference or use device preference
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    if (savedTheme) {
+        setTheme(savedTheme);
+    } else if (prefersDark) {
+        setTheme('dark');
+    } else {
+        setTheme('light');
+    }
+    
+    // Toggle theme on button click
+    themeToggle.addEventListener('click', () => {
+        themeToggle.classList.add('clicked');
+        
+        // Remove class after animation completes
+        setTimeout(() => {
+            themeToggle.classList.remove('clicked');
+        }, 300);
+        
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        setTheme(newTheme);
+    });
+
     // Update footer year
     const yearSpan = document.querySelector('.footer p:last-child');
     if (yearSpan) {
@@ -53,12 +107,12 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!isDeleting && charIndex === currentPhrase.length) {
                 // Pause at the end of typing
                 isDeleting = true;
-                typingSpeed = 2000;
+                typingSpeed = 2000; // Pause before deleting
             } else if (isDeleting && charIndex === 0) {
                 // Move to next phrase
                 isDeleting = false;
                 phraseIndex = (phraseIndex + 1) % phrases.length;
-                typingSpeed = 500;
+                typingSpeed = 500; // Pause before typing next phrase
             }
 
             setTimeout(typeEffect, typingSpeed);
