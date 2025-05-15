@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Thibault - Frontend Developer & UI/UX Designer">
+    <title>Contact - Thibault</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("xiyq2GTzXY5dVsU24");
+        })();
+    </script>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <a href="index.html">
+                    <div class="logo">
+                        <span>T</span><span>T</span>
+                    </div>
+                </a>
+            </div>
+            <div class="nav-menu-container">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="projects.html" class="nav-link">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link active">Contact</a>
+                    </li>
+                </ul>
+                <!-- Theme Toggle Button -->
+                <div class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode">
+                    <i class="toggle-icon fas fa-sun"></i>
+                </div>
+                <div class="nav-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-container">
+        <div class="section-content contact-content">
+            <h2 class="section-title">Get in Touch</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-card-content">
+                            <h3>Let's Talk</h3>
+                            <p>I'm always interested in new opportunities and collaborations.</p>
+                            
+                            <div class="contact-details">
+                                <div class="contact-item">
+                                    <i class="fas fa-envelope"></i>
+                                    <div class="contact-text">
+                                        <h4>Email</h4>
+                                        <p>thibault.thierry7@gmail.com</p>
+                                    </div>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <div class="contact-text">
+                                        <h4>Location</h4>
+                                        <p>San Francisco, CA</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="contact-social">
+                                <h4>Follow Me</h4>
+                                <div class="social-links">
+                                    <a href="https://github.com/thibaultthi" class="social-link" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                    <a href="https://www.linkedin.com/in/thierrythibault" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                                        <i class="fab fa-linkedin"></i>
+                                    </a>
+                                    <a href="https://x.com/Thibaulthierry" class="social-link" aria-label="X (Twitter)" target="_blank" rel="noopener noreferrer">
+                                        <i class="fab fa-x"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-container">
+                    <form id="contactForm" class="contact-form" novalidate>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input type="text" id="name" name="name" required>
+                                <label for="name">Your Name</label>
+                                <span class="input-highlight"></span>
+                            </div>
+                            <span class="error-message"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input type="email" id="email" name="email" required>
+                                <label for="email">Your Email</label>
+                                <span class="input-highlight"></span>
+                            </div>
+                            <span class="error-message"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input type="text" id="subject" name="subject" required>
+                                <label for="subject">Subject</label>
+                                <span class="input-highlight"></span>
+                            </div>
+                            <span class="error-message"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                                <label for="message">Your Message</label>
+                                <span class="input-highlight"></span>
+                            </div>
+                            <span class="error-message"></span>
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+                            <span class="btn-text">Send Message</span>
+                            <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>Made with <span class="heart">❤</span> by Thibault</p>
+        <p>© 2025 All rights reserved</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
