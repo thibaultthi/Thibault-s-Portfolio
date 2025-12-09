@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 300); // Slightly longer than our CSS transition to ensure completion
     };
     
-    // Check for saved theme preference or use device preference
+    // Check for saved theme preference or default to dark
     const savedTheme = localStorage.getItem('theme');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else if (prefersDark) {
         setTheme('dark');
     } else {
-        setTheme('light');
+        setTheme('dark'); // Default to dark theme
     }
     
     // Toggle theme on button click
@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
         typingText.textContent = '';
         
         const phrases = [
-            'Product Manager',
+            'Product Builder',
             'Problem Solver',
             'Tech Enthusiast',
             'Web Creator',

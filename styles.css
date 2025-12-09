@@ -934,6 +934,10 @@ body {
     width: 100%;
 }
 
+.project-card.hide {
+    display: none;
+}
+
 .project-card:hover {
     transform: translateY(-7px);
     box-shadow: var(--shadow-lg);
